@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row-1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row label,
+        .form-row-1 label {
+            margin-bottom: 5px;
+        }
+
+        .form-row input,
+        .form-row-1 input,
+        select {
+            margin-bottom: 10px;
+        }
+
+        .variable-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .variable-group label {
+            margin-bottom: 10px;
+        }
+        .h1{
+            text-align: center;
+        }
+        .p{
+            text-align: center;
+        }
+    </style>
+    <script src="10.scriptbai2.js"></script>
+</head>
+
+<body>
+    <hr>
+    <h1 class="h1">Web Training Center</h1>
+    <p class="p">Tutorials, Exercises, Assignments</p>
+    <h2>Validate form fields using JavaScript - the beginners way</h2>
+    <p>In this assignment, you have to validate form fields using JavaScript - the beginners way</p><br>
+    <p>All fields are mandatory</p>
+    <h3>Personal details</h3>
+    <form id="quadraticForm" class="form-container">
+        <div class="form-row">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+
+            <label for="gender">Gender</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" required>
+
+            <label for="city">City</label>
+            <select id="city" required>
+                <option value="">Select</option>
+                <option value="city1">Hà Nội</option>
+                <option value="city2">Hồ Chí Minh</option>
+                <option value="city3">Huế</option>
+            </select>
+
+            <label for="expertise">Expertise</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="expertise" name="expertise" value="expertise1" required>
+                <label for="expertise1">HTML</label>
+                <input type="checkbox" id="expertise" name="expertise" value="expertise2" required>
+                <label for="expertise2">CSS</label>
+                <input type="checkbox" id="expertise" name="expertise" value="expertise3" required>
+                <label for="expertise3">JavaScript</label>
+                <input type="checkbox" id="expertise" name="expertise" value="expertise4" required>
+                <label for="expertise4">jQuery</label>
+            </div>
+        </div>
+        <div class="form-row-1">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <div class="variable-group">
+                <label for="dob">Date of birth (MM/DD/YYYY) *</label>
+                <input type="text" id="dob" required>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+
+                <label for="country">Country</label>
+                <input type="text" id="country" required>
+
+                <label for="group">Group</label>
+                <input type="text" id="group" required>
+            </div>
+        </div>
+    </form>
+    <br>
+    <input type="submit" value="Save" form="quadraticForm">
+</body>
+
+</html>

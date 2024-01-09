@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: grid;
+            grid-gap: 2px;
+            grid-template-columns: max-content max-content;
+            grid-template-rows: repeat(4, max-content);
+            align-items: center;
+        }
+        
+        label {
+            grid-column: 1 / 2;
+            white-space: nowrap;
+        }
+        
+        input, select {
+            grid-column: 2 / 3;
+        }
+        
+        .radio-group {
+            grid-column: 2 / 3;
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-group label {
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+        .div-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .div input {
+            margin-right: 10px;
+        }
+    </style>
+    <script src="10.script.js"></script>
+</head>
+<body>
+    <h3>Form Validation Exercise</h3>
+    <form id="myForm" onsubmit="return validateForm()">
+      <label for="name">Enter Name *</label>
+      <input type="text" id="name" required><br>
+  
+      <label for="email">Email *</label>
+      <input type="email" id="email" required><br>
+  
+      <label for="sex">Sex *</label><br>
+      <div class="radio-group">
+        <input type="radio" id="male" name="sex" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="sex" value="female" required>
+        <label for="female">Female</label>
+      </div><br>
+  
+      <label for="dob">Enter Birth (MM/DD?/YYYY) *</label>
+      <input type="text" id="dob" required><br>
+
+      <label for="address">Enter street address (line1)*</label>
+      <input type="address" id="address" required><br>
+
+      <label for="city">Enter City *</label>
+      <input type="text" id="city" required><br>
+
+      <label for="region">Select a region *</label>
+      <select id="region" required>
+        <option value="">Select a region</option>
+        <option value="region1">Region 1</option>
+        <option value="region2">Region 2</option>
+        <option value="region3">Region 3</option>
+      </select><br>
+  
+      <label for="zip"> Enter 5-digit Zip Code *</label>
+      <input type="text" id="zip" required><br>
+      <div>
+      <input type="submit" value="Finish">
+      <input type="button" value="Clear" onclick="clearForm()">
+      </div>
+    </form>
+</body>
+</html>
